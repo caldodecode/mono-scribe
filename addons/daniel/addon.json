@@ -1,0 +1,5 @@
+{
+    "author": "Daniel de Andrade Varela",
+    "description": "exemplo de addon da nossa aplicação marota",
+    "entry-point": "addon.js"
+}
