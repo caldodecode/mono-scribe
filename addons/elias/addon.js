@@ -1,15 +1,16 @@
 
 function changeImage() {
-    var images = ["url(imagens/sus.gif)", "url(imagens/trollface.gif)", "url(imagens/therock.gif)","url(imagens/amogus-talking.gif)", "url(imagens/amour-amongus.gif)"];
-    var imageIndex = 0;
-    var col = document.getElementById("body");
-    if( imageIndex >= images.length ) {
-        imageIndex = 0;
+    var colors = ["red", "blue", "green"];
+    var colorsIndex = 0;
+    if( colorsIndex >= colors.length ) {
+        colorsIndex = 0;
     }
-    col.style.backgroundImage = images[imageIndex];
-    imageIndex++;
+    document.body.style.backgroundColor = colors[colorsIndex];
+    colorsIndex++;
+   
+    
 }
 
 export default function () {
-    changeImage()
+    document.addEventListener("keydown", changeImage);
 }
