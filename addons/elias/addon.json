@@ -1,0 +1,5 @@
+{
+    "author": "Elias",
+    "description": "Every time you type the background will change to something funny :)",
+    "entry-point": "addon.js"
+}
