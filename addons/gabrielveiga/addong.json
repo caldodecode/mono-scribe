@@ -1,0 +1,6 @@
+{
+    "title": "GabrielMono",
+    "author": "Gabriel Antonio Veiga",
+    "description": "exemplo de addon da nossa aplicação marota",
+    "entry-point": "addong.js"
+}
