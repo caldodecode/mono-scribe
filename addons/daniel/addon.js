@@ -5,7 +5,17 @@ async function z(text, textElements) {
         time: 0
     }
     let pos = 0
-    setInterval(() => { stats.time++ }, 1000)
+    
+    setInterval(() => { 
+        stats.time++
+        const event = new CustomEvent('update-statis', {
+            bubbles: true,
+            cancelable: true
+        });
+        event.stats = stats
+        document.dispatchEvent(event) 
+    }, 1000)
+
     window.addEventListener("keydown", ev => {
         if (ev.key == "Shift"
             || ev.key == "Control"
@@ -13,6 +23,7 @@ async function z(text, textElements) {
             || ev.key == "AltGraph"
             || ev.key == "ContextMenu"
             || ev.key == "Tab"
+            || ev.key == "Backspace"
         ) return
         textElements[pos].classList.remove('cursor')
         if (ev.key === text[pos]) {
