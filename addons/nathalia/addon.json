@@ -1,6 +1,6 @@
 {
-    "title": "Emocionada para ir para casa. Brincadeira, a aula foi legal",
+    "title": "Sons de acerto e erro",
     "author": "Nathalia Pauline Spindola",
-    "description": "...",
+    "description": "O programa irá emitir sons caso o usuário acerte ou erre",
     "entry-point": "addon.js"
 }
