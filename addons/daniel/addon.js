@@ -1,7 +1,14 @@
 const stats = {
     errors: 0,
     corrects: 0,
-    time: 0
+    time: 0,
+    type: null
+}
+
+function updateStats(type) {
+    const event = new CustomEvent('update-stats', { bubbles: true, cancelable: true });
+    event.stats = { ...stats, type }    
+    document.dispatchEvent(event) 
 }
 
 async function z(text, textElements) {
@@ -10,6 +17,7 @@ async function z(text, textElements) {
 
     setInterval(() => { 
         stats.time = Math.floor((performance.now()-start)/1000);
+        updateStats("time")
     }, 500)
 
     window.addEventListener("keydown", ev => {
@@ -31,11 +39,7 @@ async function z(text, textElements) {
             stats.errors++
         }
         pos++
-
-        const event = new CustomEvent('update-statis', { bubbles: true, cancelable: true });
-        event.stats = stats
-        document.dispatchEvent(event) 
-
+        updateStats("key")
         textElements[pos].classList.add('cursor')
     })
 }
