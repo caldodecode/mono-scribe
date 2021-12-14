@@ -1,0 +1,5 @@
+{
+    "author": "Luiz Eduardo Martins",
+    "description": "adiciona um modo claro ao site",
+    "entry-point": "addon.js"
+}
