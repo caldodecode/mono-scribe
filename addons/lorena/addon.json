@@ -1,6 +1,6 @@
 {
     "title": "titulo muito bom ;)",
     "author": "Lorena Marília da Silva",
-    "description": ":)",
-    "entry-point": "addon.js"
+    "description": "Cores Claras",
+    "entry-point": "cores.js"
 }
