@@ -1,0 +1,24 @@
+:root {
+    --error-color: indigo;
+    --text-color: LightYellow;
+    --sub-color: black;
+}
+
+body {
+    background-color: pink;
+}
+
+div.words-counter {
+    border: 2px solid #e64c66;
+    margin-right: 2px;
+}
+
+
+div.time-counter {
+    border: 2px solid #e64c66;
+    margin-right: 2px;
+}
+
+div.info{
+    font-weight: bold;
+}
