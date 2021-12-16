@@ -2,6 +2,7 @@ const stats = {
     errors: 0,
     corrects: 0,
     time: 0,
+    lastIsCorrect: false,
     type: null
 }
 
@@ -33,9 +34,11 @@ async function z(text, textElements) {
         if (ev.key === text[pos]) {
             textElements[pos].classList.remove("wrong")
             textElements[pos].classList.add("correct")
+            stats.lastIsCorrect = true
             stats.corrects++
         } else {
             textElements[pos].classList.add("wrong")
+            stats.lastIsCorrect = false
             stats.errors++
         }
         pos++
