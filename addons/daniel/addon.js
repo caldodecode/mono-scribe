@@ -1,20 +1,24 @@
+const stats = {
+    errors: 0,
+    corrects: 0,
+    time: 0,
+    type: null
+}
+
+function updateStats(type) {
+    const event = new CustomEvent('update-stats', { bubbles: true, cancelable: true });
+    event.stats = { ...stats, type }    
+    document.dispatchEvent(event) 
+}
+
 async function z(text, textElements) {
-    const stats = {
-        errors: 0,
-        corrects: 0,
-        time: 0
-    }
     let pos = 0
-    
+    let start = performance.now();
+
     setInterval(() => { 
-        stats.time++
-        const event = new CustomEvent('update-statis', {
-            bubbles: true,
-            cancelable: true
-        });
-        event.stats = stats
-        document.dispatchEvent(event) 
-    }, 1000)
+        stats.time = Math.floor((performance.now()-start)/1000);
+        updateStats("time")
+    }, 500)
 
     window.addEventListener("keydown", ev => {
         if (ev.key == "Shift"
@@ -35,6 +39,7 @@ async function z(text, textElements) {
             stats.errors++
         }
         pos++
+        updateStats("key")
         textElements[pos].classList.add('cursor')
     })
 }
