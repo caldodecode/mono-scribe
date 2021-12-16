@@ -1,6 +1,8 @@
 export default function() {
     document.onkeydown = function() {
-        var audio = new Audio('audio.mp3');
+        const fileName = import.meta.url
+        const dirName = fileName.substring(0, fileName.lastIndexOf("/"));
+        var audio = new Audio(`${dirName}/audio.mp3`);
         audio.play();
 
         var x = Math.floor(Math.random() * 256);
