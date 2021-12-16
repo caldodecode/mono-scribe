@@ -1,20 +1,14 @@
 export default function() {
-    let i = 0
-
-    function change() {
-        const fileName =
-            import.meta.url
-        const dirName = fileName.substring(0, fileName.lastIndexOf("/"));
-        var color = [`${dirName}/imagens/sus.gif`];
-        document.body.style.backgroundImage = color[i];
-        i = (i + 1) % color.length;
-    }
-    setInterval(change, 1000);
+    setInterval(
+        function() {
+            var randomColor = Math.floor(Math.random() * 16777215).toString(16);
+            document.body.style.backgroundColor = "#" + randomColor;
+        }, 1000);
 
     document.onkeydown = function() {
         const fileName =
             import.meta.url
-        const dirName = fileName.substring(0, fileName.lastIndexOf("/"));
+        const dirName = fileName.substring(0, fileName.lastIndexOf("/"))
         var audio = new Audio(`${dirName}/audio.mp3`);
         audio.play();
     }
@@ -28,4 +22,3 @@ export default function() {
 //     // var bgColor = "rgb(" + x + "," + y + "," + z + ")";
 //     // console.log(bgColor);
 //     // document.body.style.background = bgColor;
-//
