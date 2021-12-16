@@ -1,0 +1,5 @@
+{
+    "author": "Henrique Zanchet Santana",
+    "description": "exemplo de addon da nossa aplicação marota",
+    "entry-point": "henrique.js"
+}
