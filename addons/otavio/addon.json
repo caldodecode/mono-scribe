@@ -1,0 +1,6 @@
+{
+    "Title": "titulo lesgau",
+    "author": "Otavio Rosaldo Machado Lobo",
+    "description": "exemplo de addon da nossa aplicação marota",
+    "entry-point": "addon.js"
+}
