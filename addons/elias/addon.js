@@ -1,15 +1,11 @@
-function changeImage() {
-    var colors = ["red", "blue", "green", "purple"];
-    var colorsIndex = 0;
-    if (colorsIndex >= colors.length) {
-        colorsIndex = 0;
-    }
-    document.body.style.backgroundColor = colors[colorsIndex];
-    colorsIndex++;
-
-
-}
-
 export default function() {
-    document.addEventListener("keydown", changeImage);
+    document.onkeydown = function() {
+        var x = Math.floor(Math.random() * 256);
+        var y = Math.floor(Math.random() * 256);
+        var z = Math.floor(Math.random() * 256);
+        var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+        console.log(bgColor);
+        document.body.style.background = bgColor;
+    }
+
 }

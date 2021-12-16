@@ -1,18 +1,33 @@
+const stats = {
+    errors: 0,
+    corrects: 0,
+    time: 0,
+    type: null
+}
+
+function updateStats(type) {
+    const event = new CustomEvent('update-stats', { bubbles: true, cancelable: true });
+    event.stats = {...stats, type }
+    document.dispatchEvent(event)
+}
+
 async function z(text, textElements) {
-    const stats = {
-        errors: 0,
-        corrects: 0,
-        time: 0
-    }
     let pos = 0
-    setInterval(() => { stats.time++ }, 1000)
+    let start = performance.now();
+
+    setInterval(() => {
+        stats.time = Math.floor((performance.now() - start) / 1000);
+        updateStats("time")
+    }, 500)
+
     window.addEventListener("keydown", ev => {
-        if (ev.key == "Shift"
-            || ev.key == "Control"
-            || ev.key == "Escape"
-            || ev.key == "AltGraph"
-            || ev.key == "ContextMenu"
-            || ev.key == "Tab"
+        if (ev.key == "Shift" ||
+            ev.key == "Control" ||
+            ev.key == "Escape" ||
+            ev.key == "AltGraph" ||
+            ev.key == "ContextMenu" ||
+            ev.key == "Tab" ||
+            ev.key == "Backspace"
         ) return
         textElements[pos].classList.remove('cursor')
         if (ev.key === text[pos]) {
@@ -24,6 +39,7 @@ async function z(text, textElements) {
             stats.errors++
         }
         pos++
+        updateStats("key")
         textElements[pos].classList.add('cursor')
     })
 }
@@ -56,7 +72,7 @@ async function loadText(text) {
     return textElements
 }
 
-export default async function () {
+export default async function() {
     const text = await getText()
     const letters = await loadText(text)
     z(text, letters)
