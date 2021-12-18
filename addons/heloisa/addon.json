@@ -1,5 +1,5 @@
 {
     "author": "Heloísa De Conto",
-    "description": "Mudar a cor de fundo ao atingir determinado numero de teclas pressionadas",
+    "description": "Mudar a cor de fundo ao atingir determinado numero de caracteres",
     "entry-point": "addon.js"
 }
