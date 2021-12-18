@@ -1,17 +1,35 @@
-function changeBackground() {
-    
-    var bgColors = [ "#070538", "#280038", "#4F041E", "#380500", "#00381E", "#012738", "#323437"];
-    var colorClick = 0;
-    if(colorClick < bgColors.leght){
-        document.body.style.backgroundColor = bgColors[colorClick];
-        colorClick ++;
-        if (colorClick >= bgColors.length){
-            colorClick = 0;
+export default function() {
+
+    let qtd = 0
+
+    document.addEventListener("keydown", ev => {
+        qtd++
+
+        if (qtd == 15) {
+            document.body.style.backgroundColor = "#F6AE9D";
+            return
         }
-    }
 
-}
+        if (qtd == 30) {
+            document.body.style.backgroundColor = "#D494AF";
+            return
+        }
 
-export default function(){
-    document.addEventListener("onclick", changeBackground);
+        if (qtd == 45) {
+            document.body.style.backgroundColor = "#DCB1EB";
+            return
+        }
+
+        if (qtd == 60) {
+            document.body.style.backgroundColor = "#9E94D4";
+            return
+        }
+
+        if (qtd == 75) {
+            document.body.style.backgroundColor = "#ACCBF6";
+            qtd = 0;
+            return
+        }
+
+    })
 }
