@@ -3,7 +3,8 @@ const stats = {
     corrects: 0,
     time: 0,
     lastIsCorrect: false,
-    type: null
+    type: null,
+    lastKey: null
 }
 
 function updateStats(type) {
@@ -17,6 +18,7 @@ async function z(text, textElements) {
     let start = performance.now();
 
     setInterval(() => { 
+        stats.lastKey = null
         stats.time = Math.floor((performance.now()-start)/1000);
         updateStats("time")
     }, 500)
@@ -31,6 +33,7 @@ async function z(text, textElements) {
             || ev.key == "Backspace"
         ) return
         textElements[pos].classList.remove('cursor')
+        stats.lastKey = ev.key
         if (ev.key === text[pos]) {
             textElements[pos].classList.remove("wrong")
             textElements[pos].classList.add("correct")
