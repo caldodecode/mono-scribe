@@ -1,0 +1,5 @@
+{
+    "author": "Henrique Zanchet Santana",
+    "description": "bonk keyboard",
+    "entry-point": "bonk.js"
+}
