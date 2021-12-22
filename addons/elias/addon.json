@@ -1,5 +1,5 @@
 {
     "author": "Elias",
-    "description": "Every second the background color will change to a random :)",
+    "description": "This addon will change the background to a funny random image every time you type a word",
     "entry-point": "addon.js"
 }
