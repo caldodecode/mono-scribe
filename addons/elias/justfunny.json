@@ -1,5 +1,5 @@
 {
     "author": "Elias",
-    "description": "This addon will change the background to a funny random image every second",
+    "description": "This addon will change the background to a funny random image every 2 seconds (RECOMMENDED)",
     "entry-point": "justfunny.js"
 }
