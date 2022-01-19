@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@300;400;500&display=swap');
+
+:root {
+    --bg-color: #E0C9A6;
+    --main-color: #beaa8d;
+    --caret-color: #c1a37664;
+    --sub-color: #bea580;
+    --text-color: #18191b;
+    --error-color: #ba2d2d;
+    --error-extra-color: #a22a2a;
+    --colorful-error-color: #ba2d2d;
+    --colorful-error-extra-color: #a22a2a;
+    --font: "Dancing Script";
+}
+
+body {
+    background-color: var(--bg-color);
+    /* background-image: url('../assets/monitor.jpg'); */
+    background-size: cover;
+    font-family: var(--font);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    width: 95vw;
+    font-size: 1.65vw;
+    color: var(--sub-color);
+    font-weight: 500;
+}
+
+main div.info {
+    font-size: 60%;
+    font-weight: 300;
+    display: flex;
+}
+
+main div.info > div:hover {
+    color: #18191b;
+}

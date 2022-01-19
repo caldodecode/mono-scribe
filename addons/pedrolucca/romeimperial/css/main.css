@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:wght@400&display=swap');
+
+:root {
+    --bg-color: #adadad;
+    --main-color: #beaa8d;
+    --caret-color: #84848464;
+    --sub-color: #747474;
+    --text-color: #3d3d3d;
+    --error-color: #ba2d2d;
+    --error-extra-color: #a22a2a;
+    --colorful-error-color: #ba2d2d;
+    --colorful-error-extra-color: #a22a2a;
+    --font: "Gentium Book Basic";
+}
+
+body {
+    background-color: var(--bg-color);
+    /* background-image: url('../assets/monitor.jpg'); */
+    background-size: cover;
+    font-family: var(--font);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    width: 95vw;
+    font-size: 1.65vw;
+    color: var(--sub-color);
+    text-align: center;
+    font-weight: 400;
+}
+
+main div.info {
+    font-size: 60%;
+    font-weight: 300;
+    display: flex;
+}
+
+main div.info > div:hover {
+    color: #3d3d3d;
+}

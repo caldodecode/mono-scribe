@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrainsMono:wght@300;400;500&display=swap');
+
+:root {
+    --bg-color: #080808;
+    --main-color: #00aa00;
+    --caret-color: #00aa00;
+    --sub-color: #1e441e;
+    --text-color: #00aa00;
+    --error-color: #be1010;
+    --error-extra-color: #8e0d0d;
+    --colorful-error-color: #a91221;
+    --colorful-error-extra-color: #7e2a33;
+    --font: "JetBrains Mono";
+}
+
+body {
+    background-color: var(--bg-color);
+    /* background-image: url('../assets/monitor.jpg'); */
+    background-size: cover;
+    font-family: var(--font);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 32vh;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    width: 95vw;
+    font-size: 1.185vw;
+    color: var(--sub-color);
+    font-weight: 400;
+}
+
+main div.info {
+    font-size: 60%;
+    font-weight: 300;
+    display: flex;
+}
+
+main div.info > div:hover {
+    color: #00aa00;
+}
